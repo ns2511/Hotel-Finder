@@ -22,7 +22,7 @@ async function getDestination() {
     alert("arrival date can not be after the departure Date!");
     return;
   }
-  document.getElementById("spinner-box").innerHTML = `<img src="/spinner-8565_256.gif" id="spinner" alt="Loading...">`;
+  document.getElementById("spinner-box").innerHTML = `<img src="spinner-8565_256.gif" id="spinner" alt="Loading...">`;
   const destination = document.getElementById("search").value;
   const url = `https://booking-com15.p.rapidapi.com/api/v1/hotels/searchDestination?query=${destination}`;
   const options = {
@@ -101,7 +101,7 @@ function populateHotels(hotels) {
                     </div>
                     <div class="hotelActions">
                         <button onclick="showMap('${hotel.hotel_id}')" class="showMapBtn"  >
-                            <img src="/map_pin.png" alt="Location">
+                            <img src="map_pin.png" alt="Location">
                         </button>
                         <button onclick="addToFavList('${hotel.hotel_id}')" class="FavBtn">
                             Add to Favourite
