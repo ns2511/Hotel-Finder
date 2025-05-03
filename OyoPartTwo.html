@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oyo part 2 - hotel finder</title>
+    <link rel="stylesheet" href="/OyoPartTwo/OyoPartTwo.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- searching data -->
+        <div class="searchContainer">
+
+            <div class="searchBar">
+                <label for="searchCity">Enter City: </label>
+                <input required type="text" name="searchCity" placeholder="London" id="search">
+
+            </div>
+            <div class="inputFields">
+                <div class="dates">
+                    <div class="arrivalDate">
+                        <label for="arrivalDate">Arrival Date: </label>
+                        <input required type="date" name="arrivalDate" id="arrivalDate">
+
+                    </div>
+                    <div class="departureDate">
+                        <label for="departureDate">Departure Date: </label>
+                        <input required type="date" name="departureDate" id="departureDate">
+
+                    </div>
+                </div>
+
+                <div class="searchBtn">
+                    <button onclick="getDestination()" id="search-btn">Search</button>
+
+                </div>
+            </div>
+
+
+
+        </div>
+        <!-- map popup -->
+        <div id="mapPopup">
+            <button onclick="closeMap()">X</button>
+            <div id="map"></div>
+        </div>
+
+        
+        <!-- result populate -->
+        <div class="resultContainer">
+            <h1>Hotels</h1>
+            <div class="filterContainer">
+                  <input placeholder="Try Searching with Hotel Name" id="filter" name="filter" type="text">
+            </div>
+            <div>
+                <div>
+                    <h2 id="status"></h2>
+                    <div id="spinner-box">
+                    </div>
+                </div>
+
+            </div>
+            <div class="hotels">
+
+            </div>
+
+            <button id="showFavBtn" onclick="showFavList()" class="FavBtn">
+                Show favourite List
+            </button>
+            <div class="favList">
+
+            </div>
+        </div>
+    </div>
+
+    <script src="/OyoPartTwo/OyoPartTwo.js"></script>
+</body>
+
+</html>
