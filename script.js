@@ -22,7 +22,7 @@ async function getDestination() {
     alert("arrival date can not be after the departure Date!");
     return;
   }
-  document.getElementById("spinner-box").innerHTML = `<img src="/OyoPartTwo/spinner-8565_256.gif" id="spinner" alt="Loading...">`;
+  document.getElementById("spinner-box").innerHTML = `<img src="/spinner-8565_256.gif" id="spinner" alt="Loading...">`;
   const destination = document.getElementById("search").value;
   const url = `https://booking-com15.p.rapidapi.com/api/v1/hotels/searchDestination?query=${destination}`;
   const options = {
@@ -101,7 +101,7 @@ function populateHotels(hotels) {
                     </div>
                     <div class="hotelActions">
                         <button onclick="showMap('${hotel.hotel_id}')" class="showMapBtn"  >
-                            <img src="/OyoPartTwo/map_pin.png" alt="">
+                            <img src="/map_pin.png" alt="Location">
                         </button>
                         <button onclick="addToFavList('${hotel.hotel_id}')" class="FavBtn">
                             Add to Favourite
@@ -190,12 +190,12 @@ function addToFavList(hotelId){
 
 function removeFromFavList(hotelId){
   console.log("remove from fav list function");
-  favList.forEach(hotel => {
-    if (hotel.hotel_id == hotelId) {
-      favList.pop(hotel);
-      return;
-    }
-  });
+  const index = favList.findIndex(hotel => hotel.hotel_id === hotelId);
+
+  if (index !== -1) {
+    // Remove the hotel from the list if found
+    favList.splice(index, 1);
+  }
   showFavList()
 }
 
